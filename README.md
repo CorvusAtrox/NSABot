@@ -3,16 +3,12 @@ A Discord.js bot that logs everything sent to it or anything sent in a server th
 
 # Installing
 
-First, get Discord.js!
+Clone the repo:
+`git clone https://github.com/CorvusAtrox/NSABot.git`
 
-`npm install discord.js`
+In the NSABot directory, run `npm install`
 
-Then, afterwards download the bot.js file!
+[Register an app with Discord](https://discordapp.com/developers/applications/me/create), add a bot user to the app, and copy the user token for the bot into bot.js. Also on the Discord application settings for the bot user click the OAuth URL generator to create a link to add the bot to your server.
 
-To run the bot, run the following command:
-
-`node bot.js --no-deprecation`
-
-# Done!
-
-Now you can spy and log shit just like ya bois at the NSA! Have fun!
+# Running
+Start the bot with `node bot.js`. It will now output all messages it sees to stdout.

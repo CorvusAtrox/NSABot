@@ -1,5 +1,7 @@
+const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
+var options = {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}
 
 client.on('ready', () => {
   console.log(`Welcome to NSABot! Coded by internetperson!`);
@@ -7,11 +9,10 @@ client.on('ready', () => {
 });
 
 client.on('message', function(message) {
-        if (message.channel.isPrivate) {
-                console.log(`(Private) ${message.author.username}: ${message.content}`);
-        } else {
-                console.log(`(${message.guild.name} / ${message.channel.name}) ${message.author.username}: ${message.content}`);
-        }
+        var stamp = message.createdAt.toLocaleString(undefined, options);
+		fs.appendFile(`logs/${stamp.substring(0,7)} ${message.channel.name}.txt`, 
+					  `[${stamp}] <${message.author.username}> ${message.content} \r\n`, 
+					  'utf8', function (err) { if (err) throw err; });
 });
 
 client.login('your-token-here');
