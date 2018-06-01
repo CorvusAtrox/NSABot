@@ -1,0 +1,1 @@
+Only used to allow the logs folder to exist, delete me pls
